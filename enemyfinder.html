@@ -1,0 +1,120 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 500px;
+            height: 500px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+        #config {
+            float: left;
+            width: 400px;
+            height: 600px;
+        }
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<div id = "config"></div>
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"group": "friends", "id": 20747, "label": "Damage Inc", "shape": "dot"}, {"group": null, "id": 8706, "label": "The UnLeashed Sykoz", "shape": "dot"}, {"group": "enemies", "id": 42125, "label": "Octogenarian DirtyBombers", "shape": "dot"}, {"group": null, "id": 43325, "label": "Crime Syndicate", "shape": "dot"}, {"group": "enemies", "id": 27223, "label": "Little Stompers", "shape": "dot"}, {"group": "friends", "id": 12249, "label": "KN-Ascension", "shape": "dot"}, {"group": null, "id": 7709, "label": "Vulpes Vulpes", "shape": "dot"}, {"group": null, "id": 36140, "label": "Princess Dale\u0027s Beavers", "shape": "dot"}, {"group": null, "id": 7835, "label": "Monarch Engineering", "shape": "dot"}, {"group": null, "id": 41066, "label": "BoOtCaMp K.N.", "shape": "dot"}, {"group": "enemies", "id": 15655, "label": "Ravage", "shape": "dot"}, {"group": "friends", "id": 37786, "label": "LEGACY", "shape": "dot"}, {"group": "friends", "id": 33783, "label": "Impulse", "shape": "dot"}, {"group": "friends", "id": 8811, "label": "Impulse 13!", "shape": "dot"}, {"group": "friends", "id": 10296, "label": "Equilibrate", "shape": "dot"}, {"group": "enemies", "id": 9032, "label": "Wolf Pack", "shape": "dot"}, {"group": "friends", "id": 40992, "label": "Medic!!", "shape": "dot"}, {"group": null, "id": 15929, "label": "The Inquisition", "shape": "dot"}, {"group": "friends", "id": 13377, "label": "The Brotherhood of War", "shape": "dot"}, {"group": "enemies", "id": 22781, "label": "The Wolverines", "shape": "dot"}, {"group": null, "id": 8468, "label": "Bloodbath and Beyond", "shape": "dot"}, {"group": null, "id": 39531, "label": "The Fortunate Sons", "shape": "dot"}, {"group": "enemies", "id": 9176, "label": "The Iron Fist", "shape": "dot"}, {"group": "friends", "id": 7197, "label": "HeLa", "shape": "dot"}, {"group": null, "id": 14078, "label": "~Twisted~", "shape": "dot"}, {"group": null, "id": 8336, "label": "Monarch", "shape": "dot"}, {"group": "friends", "id": 26437, "label": "The Chimera\u0027s Den", "shape": "dot"}, {"group": "enemies", "id": 33241, "label": "Nub Navy", "shape": "dot"}, {"group": "friends", "id": 11376, "label": "Also Impulse", "shape": "dot"}, {"group": "friends", "id": 17845, "label": "OS Medical", "shape": "dot"}, {"group": null, "id": 10850, "label": "White House Collective", "shape": "dot"}, {"group": null, "id": 13383, "label": "SA Infinite - Recruiting", "shape": "dot"}, {"group": "friends", "id": 16247, "label": "BoW - 4.20", "shape": "dot"}, {"group": null, "id": 40518, "label": "Sacrifice", "shape": "dot"}, {"group": null, "id": 16120, "label": "Stoners Reeking Havoc", "shape": "dot"}, {"group": null, "id": 35140, "label": "Vault 76", "shape": "dot"}, {"group": "enemies", "id": 21040, "label": "The Deep End", "shape": "dot"}, {"group": null, "id": 12255, "label": "Imperial MediHaven", "shape": "dot"}, {"group": null, "id": 39960, "label": "Brave Survivors", "shape": "dot"}, {"group": null, "id": 28073, "label": "Goodnight Moon", "shape": "dot"}, {"group": "friends", "id": 7935, "label": "The Collective", "shape": "dot"}, {"group": "enemies", "id": 9412, "label": "BLACK STATUES", "shape": "dot"}, {"group": null, "id": 42650, "label": "The Night\u2019s Watch", "shape": "dot"}, {"group": "enemies", "id": 15120, "label": "Wolf Pack Next Generation", "shape": "dot"}, {"group": "enemies", "id": 20303, "label": "Wolf Pack Revival", "shape": "dot"}, {"group": null, "id": 11796, "label": "HT-", "shape": "dot"}, {"group": null, "id": 18678, "label": "Murder Junkies", "shape": "dot"}]);
+        edges = new vis.DataSet([{"from": 20747, "title": "ally vs enemy", "to": 8706}, {"from": 42125, "title": "irrelevant", "to": 43325}, {"from": 27223, "title": "enemy vs ally", "to": 12249}, {"from": 7709, "title": "irrelevant", "to": 36140}, {"from": 7835, "title": "irrelevant", "to": 41066}, {"from": 15655, "title": "enemy vs ally", "to": 37786}, {"from": 27223, "title": "enemy vs ally", "to": 33783}, {"from": 27223, "title": "enemy vs ally", "to": 8811}, {"from": 27223, "title": "enemy vs ally", "to": 10296}, {"from": 9032, "title": "enemy vs ally", "to": 40992}, {"from": 15929, "title": "enemy vs ally", "to": 13377}, {"from": 15655, "title": "enemy vs ally", "to": 13377}, {"from": 22781, "title": "enemy vs ally", "to": 10296}, {"from": 8468, "title": "irrelevant", "to": 39531}, {"from": 9176, "title": "enemy vs ally", "to": 7197}, {"from": 14078, "title": "enemy vs ally", "to": 12249}, {"from": 8336, "title": "enemy vs ally", "to": 26437}, {"from": 33241, "title": "enemy vs ally", "to": 11376}, {"from": 14078, "title": "enemy vs ally", "to": 17845}, {"from": 8468, "title": "irrelevant", "to": 10850}, {"from": 8706, "title": "enemy vs ally", "to": 26437}, {"from": 8468, "title": "enemy vs ally", "to": 26437}, {"from": 8706, "title": "irrelevant", "to": 10850}, {"from": 9176, "title": "irrelevant", "to": 13383}, {"from": 15929, "title": "enemy vs ally", "to": 16247}, {"from": 40518, "title": "irrelevant", "to": 16120}, {"from": 35140, "title": "irrelevant", "to": 16120}, {"from": 21040, "title": "enemy vs ally", "to": 10296}, {"from": 12255, "title": "irrelevant", "to": 39960}, {"from": 27223, "title": "enemy vs ally", "to": 17845}, {"from": 28073, "title": "enemy vs ally", "to": 7935}, {"from": 9412, "title": "enemy vs ally", "to": 26437}, {"from": 9032, "title": "irrelevant", "to": 42650}, {"from": 9032, "title": "irrelevant", "to": 10850}, {"from": 8706, "title": "irrelevant", "to": 42650}, {"from": 8336, "title": "irrelevant", "to": 10850}, {"from": 15120, "title": "irrelevant", "to": 42650}, {"from": 15120, "title": "irrelevant", "to": 13383}, {"from": 7709, "title": "enemy vs ally", "to": 33783}, {"from": 8336, "title": "enemy vs ally", "to": 7935}, {"from": 20303, "title": "irrelevant", "to": 41066}, {"from": 42125, "title": "enemy vs ally", "to": 26437}, {"from": 8336, "title": "irrelevant", "to": 41066}, {"from": 9176, "title": "irrelevant", "to": 42650}, {"from": 8468, "title": "irrelevant", "to": 42650}, {"from": 9412, "title": "irrelevant", "to": 39531}, {"from": 11796, "title": "irrelevant", "to": 18678}, {"from": 8706, "title": "irrelevant", "to": 13383}, {"from": 9032, "title": "enemy vs ally", "to": 26437}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": true
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+        // if this network requires displaying the configure window,
+        // put it in its div
+        options.configure["container"] = document.getElementById("config");
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
