@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-11-28T19:23:01.329Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.114 Safari/537.36" etag="TXO-QwLbM4Z30asBzEDs" version="15.8.6" type="github">
+<mxfile host="app.diagrams.net" modified="2021-11-28T20:33:52.018Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.114 Safari/537.36" etag="5yEb6AzYBtPx5Pq1FOTO" version="15.8.6" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="2209" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1382" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -152,7 +152,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="d0LsyiPQaal6j7EJQ6Qx-81" value="" style="group" vertex="1" connectable="0" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="-135" y="70" width="690" height="290" as="geometry" />
+          <mxGeometry x="120" y="40" width="690" height="290" as="geometry" />
         </mxCell>
         <mxCell id="d0LsyiPQaal6j7EJQ6Qx-29" value="Join at the right time&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="d0LsyiPQaal6j7EJQ6Qx-81">
           <mxGeometry width="690" height="290" as="geometry" />
@@ -188,7 +188,7 @@
         </mxCell>
         <mxCell id="d0LsyiPQaal6j7EJQ6Qx-19" value="Yes, the hitter has joined&lt;br&gt;[image]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="d0LsyiPQaal6j7EJQ6Qx-11">
           <mxGeometry x="-0.38" relative="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint x="5" y="-28" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="d0LsyiPQaal6j7EJQ6Qx-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="d0LsyiPQaal6j7EJQ6Qx-25" target="d0LsyiPQaal6j7EJQ6Qx-33">
@@ -267,13 +267,12 @@
         <mxCell id="d0LsyiPQaal6j7EJQ6Qx-82" value="RIP :(&lt;br&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="d0LsyiPQaal6j7EJQ6Qx-57" target="d0LsyiPQaal6j7EJQ6Qx-60">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="d0LsyiPQaal6j7EJQ6Qx-84" value="You Are Out Of Hospital" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="d0LsyiPQaal6j7EJQ6Qx-70" target="d0LsyiPQaal6j7EJQ6Qx-44">
-          <mxGeometry x="-0.9357" relative="1" as="geometry">
+        <mxCell id="d0LsyiPQaal6j7EJQ6Qx-84" value="You Are Out Of Hospital" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="d0LsyiPQaal6j7EJQ6Qx-70" target="d0LsyiPQaal6j7EJQ6Qx-29">
+          <mxGeometry x="-0.9645" relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="487" y="2180" />
-              <mxPoint x="80" y="2180" />
-              <mxPoint x="80" y="1380" />
-              <mxPoint x="430" y="1380" />
+              <mxPoint x="487" y="2150" />
+              <mxPoint x="80" y="2150" />
+              <mxPoint x="80" y="185" />
             </Array>
             <mxPoint as="offset" />
           </mxGeometry>
